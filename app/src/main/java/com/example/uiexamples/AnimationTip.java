@@ -65,6 +65,5 @@ public class AnimationTip extends AppCompatActivity {
         Animation anim = AnimationUtils.loadAnimation(context, R.anim.anim);
         //以圖片執行動畫
         imgBulb.startAnimation(anim);
-
     }
 }

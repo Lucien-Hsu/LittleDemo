@@ -13,7 +13,10 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
     ListView lvResult;
     //泛型類別陣列，"?"表示不確定的參數化類型
-    Class<?>[] allClass = {RatingBarEx.class,  SeekBarEx.class, DragIcon.class, VideoPlayer.class, GridViewEx.class, AnimationTip.class, FbyFAnimation.class};
+    Class<?>[] allClass = {
+            RatingBarEx.class,  SeekBarEx.class, DragIcon.class,
+            VideoPlayer.class, GridViewEx.class, AnimationTip.class,
+            FbyFAnimation.class, PropertyAnimation.class};
 
     Context context;
 
@@ -27,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
         lvResult = findViewById(R.id.lv_result);
 
         //Activity 名稱陣列
-        String[] data = {"Rating Bar", "SeekBar", "DragIcon", "VideoPlayer", "GridView", "AnimationTip", "FrameByFrameAnimation"};
+        String[] data = {
+                "Rating Bar", "SeekBar", "DragIcon",
+                "VideoPlayer", "GridView", "AnimationTip",
+                "FrameByFrameAnimation", "PropertyAnimation"};
 
         //建立並連接ListView適配器
         ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, data);
@@ -65,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 6:
                         intent = new Intent(context, allClass[6]);
+                        startActivity(intent);
+                        break;
+                    case 7:
+                        intent = new Intent(context, allClass[7]);
                         startActivity(intent);
                         break;
                 }
